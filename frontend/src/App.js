@@ -33,6 +33,7 @@ import Home from './components/Home';
 import BMICalculator from './components/BMICalculator';
 import CalorieCounter from './components/CalorieCounter';
 import RandomWorkout from './components/RandomWorkout';
+import Auth from './components/Auth';
 import Login from './components/Login'; // Import Login component
 // import Signup from './components/'; // Import Signup component
 import './App.css';
@@ -47,6 +48,7 @@ function App() {
           <Route path="/bmi" element={<BMICalculator />} />
           <Route path="/calories" element={<CalorieCounter />} />
           <Route path="/workout" element={<RandomWorkout />} />
+          <Route path="/Auth" element={<Auth />} />
           <Route path="/login" element={<Login />} /> {/* New route for Login */}
              </Routes>
       </div>
