@@ -28,8 +28,7 @@ function Navbar() {
         <li><Link to="/bmi">BMI Calculator</Link></li>
         <li><Link to="/calories">Calorie Counter</Link></li>
         <li><Link to="/workout">Random Workout</Link></li>
-        <li><Link to="/login">Login</Link></li>
-        <li><Link to="/signup">Signup</Link></li>
+        
       </ul>
     </nav>
   );
