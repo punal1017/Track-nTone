@@ -1,31 +1,3 @@
-// // src/App.js
-// import React from 'react';
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import Navbar from './components/Navbar';
-// import Home from './components/Home';
-// import BMICalculator from './components/BMICalculator';
-// import CalorieCounter from './components/CalorieCounter';
-// import RandomWorkout from './components/RandomWorkout';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <Router>
-//       <div className="App">
-//         <Navbar />
-//         <Routes>
-//           <Route path="/" element={<Home />} />
-//           <Route path="/bmi" element={<BMICalculator />} />
-//           <Route path="/calories" element={<CalorieCounter />} />
-//           <Route path="/workout" element={<RandomWorkout />} />
-//         </Routes>
-//       </div>
-//     </Router>
-//   );
-// }
-
-// export default App;
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -35,7 +7,8 @@ import CalorieCounter from './components/CalorieCounter';
 import RandomWorkout from './components/RandomWorkout';
 import Auth from './components/Auth';
 import Login from './components/Login'; // Import Login component
-// import Signup from './components/'; // Import Signup component
+import ChatBox from './components/Chatbox'; // Ensure proper casing for the component
+
 import './App.css';
 
 function App() {
@@ -48,9 +21,15 @@ function App() {
           <Route path="/bmi" element={<BMICalculator />} />
           <Route path="/calories" element={<CalorieCounter />} />
           <Route path="/workout" element={<RandomWorkout />} />
+<<<<<<< HEAD
+          <Route path="/login" element={<Login />} /> {/* Route for Login */}
+          <Route path="/Chatbox" element={<ChatBox />} /> {/* Route for ChatBox */}
+        </Routes>
+=======
           <Route path="/Auth" element={<Auth />} />
           <Route path="/login" element={<Login />} /> {/* New route for Login */}
              </Routes>
+>>>>>>> 273a1fc12072b954ceed9a5e39d16c591897a599
       </div>
     </Router>
   );

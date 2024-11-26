@@ -29,7 +29,7 @@ function Navbar() {
         <li><Link to="/calories">Calorie Counter</Link></li>
         <li><Link to="/workout">Random Workout</Link></li>
         <li><Link to="/login">Login</Link></li>
-        
+        <li><Link to="/Chatbox">Chatbox</Link></li>
       </ul>
     </nav>
   );

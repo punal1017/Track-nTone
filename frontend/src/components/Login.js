@@ -246,4 +246,95 @@ const Login = () => {
   );
 };
 
+<<<<<<< HEAD
+const styles = {
+  container: {
+    margin: '30px auto',
+    padding: '40px',
+    maxWidth: '600px',
+    background: '#1f1f1f', // Dark background
+    borderRadius: '15px',
+    boxShadow: '0 6px 15px rgba(0, 0, 0, 0.5)',
+    textAlign: 'center',
+    color: '#fff',
+  },
+  brandTitle: {
+    fontSize: '2.5rem',
+    fontWeight: 'bold',
+    marginBottom: '10px',
+    color: '#00ffcc', // Vibrant teal accent
+    textShadow: '2px 2px 5px rgba(0, 0, 0, 0.8)',
+  },
+  motivation: {
+    fontSize: '1.2rem',
+    marginBottom: '25px',
+    fontStyle: 'italic',
+    color: '#aaa', // Subtle contrast for secondary text
+  },
+  title: {
+    fontSize: '1.8rem',
+    marginBottom: '20px',
+  },
+  error: {
+    color: '#ff6b6b',
+    background: '#441010',
+    padding: '10px',
+    borderRadius: '5px',
+    marginBottom: '15px',
+    fontWeight: 'bold',
+  },
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'stretch',
+  },
+  inputGroup: {
+    marginBottom: '20px',
+  },
+  label: {
+    display: 'block',
+    marginBottom: '8px',
+    color: '#ddd', // Subtle text color
+    fontSize: '1rem',
+  },
+  input: {
+    width: '100%',
+    padding: '12px',
+    fontSize: '1rem',
+    borderRadius: '8px',
+    border: '1px solid #555', // Subtle border
+    background: '#333', // Dark input background
+    color: '#fff', // White text
+    boxSizing: 'border-box',
+  },
+  button: {
+    padding: '12px',
+    fontSize: '1.2rem',
+    color: '#1f1f1f', // Dark button text
+    background: 'linear-gradient(135deg, #00ffcc, #007bff)', // Vibrant gradient
+    border: 'none',
+    borderRadius: '8px',
+    cursor: 'pointer',
+    transition: 'transform 0.2s, background 0.3s',
+    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.5)',
+  },
+  buttonHover: {
+    transform: 'scale(1.05)',
+  },
+  signupLink: {
+    marginTop: '20px',
+    color: '#aaa', // Subtle link text
+  },
+  link: {
+    color: '#00ffcc',
+    textDecoration: 'none',
+    fontWeight: 'bold',
+    borderBottom: '1px solid #00ffcc',
+    transition: 'color 0.3s',
+  },
+};
+
+export default Login; 
+=======
 export default Login;
+>>>>>>> 273a1fc12072b954ceed9a5e39d16c591897a599
