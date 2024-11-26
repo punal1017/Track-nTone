@@ -21,10 +21,20 @@ function App() {
           <Route path="/bmi" element={<BMICalculator />} />
           <Route path="/calories" element={<CalorieCounter />} />
           <Route path="/workout" element={<RandomWorkout />} />
+<<<<<<< HEAD
           <Route path="/auth" element={<Auth />} />
           <Route path="/login" element={<Login />} />
           <Route path="/chatbox" element={<ChatBox />} /> {/* Updated to match import */}
         </Routes>
+=======
+
+          <Route path="/login" element={<Login />} /> {/* Route for Login */}
+          <Route path="/Chatbox" element={<ChatBox />} /> {/* Route for ChatBox */}
+        </Routes>
+
+          // 
+            
+>>>>>>> a3a8647df19a09a2704e9ea76fcfeb3d4f6810d5
       </div>
     </Router>
   );

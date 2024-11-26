@@ -85,10 +85,13 @@ const Login = () => {
     </div>
   );
 };
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> a3a8647df19a09a2704e9ea76fcfeb3d4f6810d5
 const styles = {
   container: {
     margin: '30px auto',
@@ -173,4 +176,9 @@ const styles = {
   },
 };
 
+<<<<<<< HEAD
 export default Login;
+=======
+export default Login; 
+
+>>>>>>> a3a8647df19a09a2704e9ea76fcfeb3d4f6810d5
