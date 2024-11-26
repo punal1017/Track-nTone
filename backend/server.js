@@ -1,88 +1,58 @@
-<<<<<<< HEAD
-const express = require('express');
-const http = require('http');
-const socketIo = require('socket.io');
-
-// Set up the server
-const app = express();
-const server = http.createServer(app);
-const io = socketIo(server);
-
-// Handle socket connections
-io.on('connection', (socket) => {
-  console.log('A user connected');
-
-  // Listen for messages from the client
-  socket.on('message', (message) => {
-    console.log('Message received:', message);
-    io.emit('message', message); // Broadcast the message to all clients
-  });
-
-  // Handle disconnect
-  socket.on('disconnect', () => {
-    console.log('A user disconnected');
-  });
-});
-
-// Start the server
-const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-=======
 // const express = require('express');
-// const dotenv = require('dotenv');
-// const cors = require('cors');
-// const connectDB = require('./config/db');
-// const foodRoutes = require('./routes/calorieRoutes');
-// const bmiRoutes = require('./routes/bmiRoutes');
-// const authRoutes = require('./routes/authRoutes');
+// const http = require('http');
+// const socketIo = require('socket.io');
 
-// dotenv.config();
-
-// // Initialize Express
+// // Set up the server
 // const app = express();
+// const server = http.createServer(app);
+// const io = socketIo(server);
 
-// // Connect to DB
-// connectDB();
+// // Handle socket connections
+// io.on('connection', (socket) => {
+//   console.log('A user connected');
 
-// // Middleware
-// app.use(cors());
-// app.use(express.json());
+//   // Listen for messages from the client
+//   socket.on('message', (message) => {
+//     console.log('Message received:', message);
+//     io.emit('message', message); // Broadcast the message to all clients
+//   });
 
-// // Routes
-// app.use('/api/food', foodRoutes);
-// app.use('/api/bmi', bmiRoutes);
-// app.use('/api/auth', authRoutes);
+//   // Handle disconnect
+//   socket.on('disconnect', () => {
+//     console.log('A user disconnected');
+//   });
+// });
 
+// // Start the server
 // const PORT = process.env.PORT || 5000;
-
-// app.listen(PORT, () => {
+// server.listen(PORT, () => {
 //   console.log(`Server is running on port ${PORT}`);
 // });
 
 
-// // const dotenv = require('dotenv');
-// const connectDB = require('./Config/db');n
-// // const app = require('./app');
-
-// // dotenv.config();
-
-// connectDB();
-
-// const PORT = process.env.PORT || 5000;
-// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-// server.js
 const express = require('express');
-const bodyParser = require('body-parser');
-const bmiRoutes = require('./Routes/bmiRoutes');
+const dotenv = require('dotenv');
+const connectDB = require('./Config/db'); // Adjust path as necessary
+const { register, login } = require('./Controllers/authController');
+const protect = require('./Middleware/authMiddleware');
+
+dotenv.config();
+connectDB();
 
 const app = express();
 
-app.use(bodyParser.json());  // Middleware to parse incoming JSON data
-app.use('/api/bmi', bmiRoutes);  // Use the BMI routes for API requests
+// Middleware
+app.use(express.json());
 
+// Routes
+app.post('/api/register', register);
+app.post('/api/login', login);
+app.get('/api/protected', protect, (req, res) => {
+    res.status(200).json({"message": "This is a protected route"});
+});
+
+// Starting the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
->>>>>>> 273a1fc12072b954ceed9a5e39d16c591897a599
+    console.log(`Server running on port ${PORT}`);
 });
