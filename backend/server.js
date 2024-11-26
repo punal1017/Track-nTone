@@ -30,11 +30,11 @@
 // });
 
 
-// const dotenv = require('dotenv');
-// const connectDB = require('./config/db');
-// const app = require('./app');
+// // const dotenv = require('dotenv');
+// const connectDB = require('./Config/db');n
+// // const app = require('./app');
 
-// dotenv.config();
+// // dotenv.config();
 
 // connectDB();
 
