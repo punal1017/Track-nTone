@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-const Login = () => {
-    const [formData, setFormData] = useState({ email: '', password: '' });
+const Register = () => {
+    const [formData, setFormData] = useState({ name: '', email: '', password: '' });
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
@@ -15,14 +15,14 @@ const Login = () => {
         e.preventDefault();
 
         // Basic validation
-        if (!formData.email || !formData.password) {
+        if (!formData.name || !formData.email || !formData.password) {
             setError('Please fill out all fields.');
             return;
         }
 
         setIsLoading(true);
         try {
-            const response = await fetch('http://localhost:5000/api/login', {
+            const response = await fetch('http://localhost:5000/api/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
@@ -31,9 +31,8 @@ const Login = () => {
             const data = await response.json();
 
             if (response.ok) {
-                localStorage.setItem('token', data.token); // Save token in localStorage
-                alert('Login successful!');
-                window.location.href = '/dashboard'; // Redirect to dashboard or home page
+                alert('Registration successful!');
+                window.location.href = '/login'; // Redirect to login page
             } else {
                 setError(data.message);
             }
@@ -48,9 +47,21 @@ const Login = () => {
         <div style={styles.container}>
             <h1 style={styles.brandTitle}>Track n Tone</h1>
             <p style={styles.motivation}>Your fitness journey starts here.</p>
-            <h2 style={styles.title}>Login</h2>
+            <h2 style={styles.title}>Register</h2>
             {error && <div style={styles.error}>{error}</div>}
             <form onSubmit={handleSubmit} style={styles.form}>
+                <div style={styles.inputGroup}>
+                    <label style={styles.label}>Name:</label>
+                    <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="Enter your name"
+                        required
+                        style={styles.input}
+                    />
+                </div>
                 <div style={styles.inputGroup}>
                     <label style={styles.label}>Email:</label>
                     <input
@@ -76,17 +87,17 @@ const Login = () => {
                     />
                 </div>
                 <button type="submit" style={styles.button} disabled={isLoading}>
-                    {isLoading ? 'Logging in...' : 'Login'}
+                    {isLoading ? 'Registering...' : 'Register'}
                 </button>
             </form>
             <p style={styles.signupLink}>
-                New to Track n Tone? <a href="/register" style={styles.link}>Register</a>
+                Already have an account? <a href="/login" style={styles.link}>Login</a>
             </p>
         </div>
     );
 };
 
-// Styles can be defined as follows
+// Styles for the Register component
 const styles = {
     container: {
         margin: '30px auto',
@@ -171,4 +182,4 @@ const styles = {
     },
 };
 
-export default Login;
+export default Register;
