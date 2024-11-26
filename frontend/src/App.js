@@ -21,15 +21,13 @@ function App() {
           <Route path="/bmi" element={<BMICalculator />} />
           <Route path="/calories" element={<CalorieCounter />} />
           <Route path="/workout" element={<RandomWorkout />} />
-<<<<<<< HEAD
+
           <Route path="/login" element={<Login />} /> {/* Route for Login */}
           <Route path="/Chatbox" element={<ChatBox />} /> {/* Route for ChatBox */}
         </Routes>
-=======
-          <Route path="/Auth" element={<Auth />} />
-          <Route path="/login" element={<Login />} /> {/* New route for Login */}
-             </Routes>
->>>>>>> 273a1fc12072b954ceed9a5e39d16c591897a599
+
+          // 
+            
       </div>
     </Router>
   );

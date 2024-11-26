@@ -245,8 +245,6 @@ const Login = () => {
     </div>
   );
 };
-
-<<<<<<< HEAD
 const styles = {
   container: {
     margin: '30px auto',
@@ -335,6 +333,4 @@ const styles = {
 };
 
 export default Login; 
-=======
-export default Login;
->>>>>>> 273a1fc12072b954ceed9a5e39d16c591897a599
+
