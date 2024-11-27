@@ -1,36 +1,5 @@
-// const express = require('express');
-// const http = require('http');
-// const socketIo = require('socket.io');
-
-// // Set up the server
-// const app = express();
-// const server = http.createServer(app);
-// const io = socketIo(server);
-
-// // Handle socket connections
-// io.on('connection', (socket) => {
-//   console.log('A user connected');
-
-//   // Listen for messages from the client
-//   socket.on('message', (message) => {
-//     console.log('Message received:', message);
-//     io.emit('message', message); // Broadcast the message to all clients
-//   });
-
-//   // Handle disconnect
-//   socket.on('disconnect', () => {
-//     console.log('A user disconnected');
-//   });
-// });
-
-// // Start the server
-// const PORT = process.env.PORT || 5000;
-// server.listen(PORT, () => {
-//   console.log(`Server is running on port ${PORT}`);
-// });
-
-
 const express = require('express');
+const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./Config/db'); // Adjust path as necessary
 const { register, login } = require('./Controllers/authController');
@@ -43,7 +12,7 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-
+app.use(cors({ origin: 'http://localhost:3000' }))
 // Routes
 app.post('/api/register', register);
 app.post('/api/login', login);

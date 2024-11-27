@@ -45,7 +45,8 @@ import Login from './components/Login';
 import Register from './components/Register'; // Import Register
 import ChatBox from './components/Chatbox'; // Ensure this import is correct
 import './App.css';
-
+import Dashboard from './components/Dashboard'
+document.title = "TRACK N TONE";
 function App() {
   return (
     <Router>
@@ -60,6 +61,8 @@ function App() {
           <Route path="/login" element={<Login />} /> {/* Route for Login */}
           <Route path="/register" element={<Register />} /> {/* Route for Register */}
           <Route path="/chatbox" element={<ChatBox />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          
         </Routes>
       </div>
     </Router>

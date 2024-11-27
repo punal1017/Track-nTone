@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className="home">
       <div className="container">
-        <h1>Welcome to Fitness App</h1>
+        <h1>Welcome  to Fitness App</h1>
         <p>Choose a feature from the navigation menu to get started!</p>
 
         {/* Introduction Section */}

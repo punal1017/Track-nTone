@@ -67,7 +67,7 @@ const Chatbox = () => {
         
         - Lunch: Lentil soup with a side of mixed greens and a slice of whole-grain bread.
         - Snack: Cucumber and celery sticks with a low-fat yogurt dip.
-
+u
         - Dinner: Grilled turkey breast with steamed broccoli and mashed cauliflower.
         - Dessert: A baked apple with a sprinkle of cinnamon.`;
       }

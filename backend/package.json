@@ -4,21 +4,22 @@
   "description": "Backend for the Track n Tone application",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "dev": "nodemon server.js"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^5.10.9",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "bcryptjs": "^2.4.3" 
+    "mongoose": "^5.10.9"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7" 
+    "nodemon": "^2.0.7"
   },
   "engines": {
-    "node": ">=14.0.0" 
+    "node": ">=14.0.0"
   },
   "type": "commonjs"
 }
