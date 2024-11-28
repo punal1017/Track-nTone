@@ -26,17 +26,70 @@
 
 
 // controllers/bmiController.js
-exports.calculateBMI = (req, res) => {
-    const { height, weight } = req.body;
+
+// controllers/bmiController.js
+const BMI = require('../Models/BMI');
+
+exports.calculateBMI = async (req, res) => {
+    const { height, weight, user } = req.body;
+
     if (!height || !weight) {
-      return res.status(400).json({ message: 'Height and weight are required' });
+        return res.status(400).json({ message: 'Height and weight are required' });
     }
-    
+
     const bmiValue = (weight / ((height / 100) ** 2)).toFixed(2);
-    res.status(200).json({ bmi: bmiValue });
-  };
-  
-  exports.getBMI = (req, res) => {
+
+    // Save the BMI record to MongoDB
+    try {
+        const newBMI = new BMI({
+            user,
+            height,
+            weight,
+            bmi: bmiValue
+        });
+        await newBMI.save();
+        res.status(200).json({ bmi: bmiValue });
+    } catch (error) {
+        res.status(500).json({ message: 'Error saving BMI record', error });
+    }
+};
+
+exports.getBMI = (req, res) => {
     res.status(200).json({ message: 'BMI API is working' });
-  };
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// exports.calculateBMI = (req, res) => {
+//     const { height, weight } = req.body;
+//     if (!height || !weight) {
+//       return res.status(400).json({ message: 'Height and weight are required' });
+//     }
+    
+//     const bmiValue = (weight / ((height / 100) ** 2)).toFixed(2);
+//     res.status(200).json({ bmi: bmiValue });
+//   };
+  
+//   exports.getBMI = (req, res) => {
+//     res.status(200).json({ message: 'BMI API is working' });
+//   };
   
