@@ -139,9 +139,9 @@ function Home() {
           </ul>
           <div className="feature-gifs">
             <img
-              src="https://media.giphy.com/media/l1J9EdzfOSgfyueLm/giphy.gif"
-              alt="Workout GIF"
-              className="feature-gif"
+              // src="https://media.giphy.com/media/l1J9EdzfOSgfyueLm/giphy.gif"
+              // alt="Workout GIF"
+              // className="feature-gif"
             />
           </div>
         </section>
